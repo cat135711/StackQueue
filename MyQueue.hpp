@@ -32,7 +32,8 @@ namespace CPSC131
 			 */
 			void enqueue(const T& item)
 			{
-				
+				list.push_back(item);
+				size_++;
 			}
 			
 			/**
@@ -42,10 +43,38 @@ namespace CPSC131
 			 * 
 			 * If the queue is empty: throw an std::range_error
 			 */
+			
+			 
 			void dequeue()
 			{
-				
+				if(size_==0)
+				{
+					throw std::range_error("Nothing to dequeue");
+				}
+				else
+				{
+					list.pop_front();
+					size_--;
+				}
 			}
+			
+			
+				T dequeue1()
+			{
+				if(size_==0)
+				{
+					throw std::range_error("Nothing to dequeue");
+				}
+				else
+				{
+					T item = list.front();
+					list.pop_front();
+					size_--;
+					return item;
+				}
+			}
+			
+			
 			
 			/**
 			 * Peek at the front of the queue
@@ -56,7 +85,14 @@ namespace CPSC131
 			 */
 			const T& front()
 			{
-				
+				if(size_==0)
+				{
+					throw std::range_error("Front does not exist");
+				}
+				else
+				{
+					return list.front();
+				}
 			}
 			
 			/**
@@ -64,7 +100,11 @@ namespace CPSC131
 			 */
 			void clear()
 			{
-				
+				if(size_!=0)
+				{
+					list.clear();
+					size_=0;
+				}
 			}
 			
 			/**
@@ -72,7 +112,7 @@ namespace CPSC131
 			 */
 			size_t size() const
 			{
-				
+				return size_;
 			}
 			
 			/**
@@ -80,7 +120,10 @@ namespace CPSC131
 			 */
 			bool empty() const
 			{
-				
+				if(size_==0)
+				return true;
+				else
+				return false;
 			}
 		
 		//

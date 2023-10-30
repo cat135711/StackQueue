@@ -30,10 +30,13 @@ namespace CPSC131
 			 * 
 			 * Takes an item and pushes it onto the stack.
 			 */
+			
 			void push(const T& item)
 			{
-				
+				list.push_front(item);
+				size_++;
 			}
+			
 			
 			/**
 			 * Removes the next item from the stack
@@ -44,7 +47,31 @@ namespace CPSC131
 			 */
 			void pop()
 			{
-				
+				if(size_==0)
+				{
+					throw std::range_error("Nothing to pop");
+				}
+				else
+				{
+					list.pop_front();
+					size_--;
+				}
+			}
+			
+			
+			T pop1()
+			{
+				if(size_==0)
+				{
+					throw std::range_error("Nothing to pop");
+				}
+				else
+				{
+					T item = list.front();
+					list.pop_front();
+					size_--;
+					return item;
+				}
 			}
 			
 			/**
@@ -56,7 +83,14 @@ namespace CPSC131
 			 */
 			T& top()
 			{
-				
+				if(size_==0)
+				{
+					throw std::range_error("Top does not exist");
+				}
+				else
+				{
+					return list.front();
+				}
 			}
 			
 			/**
@@ -64,7 +98,11 @@ namespace CPSC131
 			 */
 			void clear()
 			{
-				
+				if(size_!=0)
+				{
+				list.clear();
+				size_=0;
+				}
 			}
 			
 			/**
@@ -72,7 +110,7 @@ namespace CPSC131
 			 */
 			size_t size()
 			{
-				
+				return size_;
 			}
 			
 			/**
@@ -80,7 +118,14 @@ namespace CPSC131
 			 */
 			bool empty()
 			{
-				
+				if(size_==0)
+				{
+					return true;
+				}
+				else
+				{
+					return false;
+				}
 			}
 			
 		//
