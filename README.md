@@ -1,6 +1,6 @@
-# Project 2 - Palindrome Detector
+# Project 3 - Palindrome Detector
 
-My submission for CPSC 131, Section 07, Project 2
+My submission for CPSC 131, Section 07, Project 3
 
 # My Information
 
