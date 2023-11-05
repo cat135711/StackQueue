@@ -8,6 +8,8 @@
  */
 
 //
+#include "MyStack.hpp"
+#include "MyQueue.hpp"
 #include "MyDetector.hpp"
 
 
@@ -24,6 +26,7 @@ using std::string, std::to_string;
 //
 int main()
 {
+	/*
 	//
 	cout << "Welcome to my Palindrome Detector!" << endl;
 	
@@ -60,6 +63,39 @@ int main()
 	
 	//
 	cout << "Thank you for using this program. Goodbyte!" << endl;
+*/
+	 std::string s1 = "o";
+	std::string s2 = "iO i";
+	std::string s3 = "Hel lOooo";
+	std::string s4 = "kkkHelo lehkkk";
+	cout << s1 << endl;
+	cout << s2 << endl;
+	cout << s3 << endl;
+	cout << s4 << endl;
+	MyDetector detect;
+	cout<<detect.isPalindrome(s1)<<endl;
+	
+	cout<<detect.isPalindrome(s2)<<endl;
+	
+	cout<<detect.isPalindrome(s3)<<endl;
+	
+	cout<<detect.isPalindrome(s4)<<endl;
+	
+	CPSC131::MyStack<char> stack2;
+	stack2.push('a');
+	stack2.push(' ');
+	stack2.push('b');
+	cout<<stack2.top()<<endl;
+	cout<<stack2.size()<<endl;
+	stack2.pop();
+	cout<<stack2.top()<<endl;
+	cout<<stack2.size()<<endl;
+	stack2.pop();
+	cout<<stack2.top()<<endl;
+	cout<<stack2.size()<<endl;
+	
+
+	
 	
 	return 0;
 }

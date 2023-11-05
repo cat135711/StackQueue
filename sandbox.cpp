@@ -19,7 +19,12 @@ using std::cout, std::cin, std::endl;
 int main()
 {
 	//
-	cout << "Hi. Put anything here you'd like." << endl;
+	std::string s1 = "Hello";
+	std::string s2 = "heloleh";
+	cout << s1 << endl;
+	cout << s2 << endl;
+	cout<<MyDetector::isPalindrome(s1)<<endl;
+	cout<<MyDetector::isPalindrome(s1)<<endl;
 	
 	return 0;
 }

@@ -49,7 +49,7 @@ namespace CPSC131
 			{
 				if(size_==0)
 				{
-					throw std::range_error("Nothing to pop");
+					throw std::range_error("Nothing to pop1");
 				}
 				else
 				{
@@ -63,7 +63,7 @@ namespace CPSC131
 			{
 				if(size_==0)
 				{
-					throw std::range_error("Nothing to pop");
+					throw std::range_error("Nothing to pop2");
 				}
 				else
 				{

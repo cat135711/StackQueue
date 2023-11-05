@@ -21,10 +21,10 @@ namespace CPSC131::PalindromeDetector
 		//	TODO: Your code here
 		MyStack<char> myStack1;
 		MyQueue<char> myQueue1;
-		std::string ss;
-		std::string sq;
+		//std::string ss;
+		//std::string sq;
 		size_t count = 0;
-		
+		size_t count2 = 0;
 		for(auto a:s)
 		{
 			if( isalpha(a) )
@@ -33,22 +33,42 @@ namespace CPSC131::PalindromeDetector
 				{
 					a+=32;
 				}
-			
+				
+				
+				if(a !=' ')
+				{
 				myStack1.push(a);
 				myQueue1.enqueue(a);
+				count2++;
+				}
 			
 			 }
 		}
 		
-		while (count < s.size() )
+		while (count < count2 )
 		{
+			/*
+			 * //while ( myStack1.size()>=count)
+			//{
 			ss[count]=myStack1.pop1();
 			sq[count]=myQueue1.dequeue1();
+			//count++;
+			//}
+			
+	
 			
 			if(ss[count] != sq[count])
 			{
 				return false;
 			}
+			*/
+			
+			if(myStack1.top() != myQueue1.front())
+			{
+				return false;
+			}
+			myStack1.pop();
+			myQueue1.dequeue();
 			
 			count++;
 		}
